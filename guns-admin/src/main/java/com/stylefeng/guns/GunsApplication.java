@@ -22,7 +22,8 @@ public class GunsApplication extends WebMvcConfigurerAdapter {
 
     @Autowired
     GunsProperties gunsProperties;
-
+    //大家好我是李卫国
+    int a=1;
     /**
      * 增加swagger的支持
      */

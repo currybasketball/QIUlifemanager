@@ -1,0 +1,33 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <input type="hidden" id="id" value="">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="id" underline="true"/>
+                            <#input id="account" name="账户申请人" underline="true"/>
+                            <#input id="applyres" name="申请原因"/>
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="applytime" name="申请时间" underline="true"/>
+                            <#input id="overtime" name="过期时间" underline="true"/>
+                            <#input id="applystate" name="0待审核1审核通过2补办" underline="true"/>
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="UserApplyInfoDlg.addSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="UserApplyInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/system/userApply/userApply_info.js"></script>
+@}

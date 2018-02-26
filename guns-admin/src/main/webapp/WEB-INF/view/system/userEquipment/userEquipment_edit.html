@@ -1,0 +1,32 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <input type="hidden" id="id" value="${item.id}">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="equipname" name="设备名称" value="${item.equipname}" underline="true"/>
+                            <#input id="equipfunc" name="设备作用" value="${item.equipfunc}"  />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="equipcharge" name="设备负责人" value="${item.equipcharge}" underline="true"/>
+                            <#input id="equiptime" name="保养次数" value="${item.equiptime}" underline="true"/>
+                            <#input id="cleantime" name="上次保养时间" value="${item.cleantime}" />
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="UserEquipmentInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="UserEquipmentInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/system/userEquipment/userEquipment_info.js"></script>
+@}

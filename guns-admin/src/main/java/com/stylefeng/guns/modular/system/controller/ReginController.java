@@ -34,7 +34,7 @@ import java.util.Map;
 public class ReginController extends BaseController {
 
     private static String PREFIX = "/system/log/";
-    int a=1;
+    int a=11;
     @Resource
     private OperationLogMapper operationLogMapper;
 

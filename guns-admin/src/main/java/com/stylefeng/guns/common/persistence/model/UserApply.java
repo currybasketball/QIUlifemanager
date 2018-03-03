@@ -2,12 +2,15 @@ package com.stylefeng.guns.common.persistence.model;
 
 import java.io.Serializable;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.baomidou.mybatisplus.enums.IdType;
 import java.math.BigDecimal;
 import java.util.Date;
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableName;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.io.Serializable;
 
 /**
@@ -39,10 +42,12 @@ public class UserApply extends Model<UserApply> {
     /**
      * 申请时间
      */
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date applytime;
     /**
      * 过期时间
      */
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date overtime;
     /**
      * 0待审核1审核通过2补办
@@ -74,18 +79,19 @@ public class UserApply extends Model<UserApply> {
         this.applyres = applyres;
     }
 
+    @JSONField(format = "yyyy-MM-dd")
     public Date getApplytime() {
         return applytime;
     }
-
+    @JSONField(format = "yyyy-MM-dd")
     public void setApplytime(Date applytime) {
         this.applytime = applytime;
     }
-
+    @JSONField(format = "yyyy-MM-dd")
     public Date getOvertime() {
         return overtime;
     }
-
+    @JSONField(format = "yyyy-MM-dd")
     public void setOvertime(Date overtime) {
         this.overtime = overtime;
     }

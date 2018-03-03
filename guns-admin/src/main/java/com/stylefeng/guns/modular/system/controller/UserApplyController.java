@@ -1,16 +1,18 @@
 package com.stylefeng.guns.modular.system.controller;
 
 import com.stylefeng.guns.core.base.controller.BaseController;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.stylefeng.guns.core.log.LogObjectHolder;
-import org.springframework.web.bind.annotation.RequestParam;
 import com.stylefeng.guns.common.persistence.model.UserApply;
 import com.stylefeng.guns.modular.system.service.IUserApplyService;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * apply控制器
@@ -26,6 +28,8 @@ public class UserApplyController extends BaseController {
 
     @Autowired
     private IUserApplyService userApplyService;
+
+
 
     /**
      * 跳转到apply首页
